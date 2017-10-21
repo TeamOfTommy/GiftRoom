@@ -15,7 +15,7 @@ import java.util.Map;
 @RequestMapping("userapi")
 public class UserApiController extends BaseController{
 
-    @RequestMapping("/user/reg")
+    @RequestMapping("/user/reg.do")
     @ResponseBody
     public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response,
                                    @RequestParam("name") String name){
