@@ -12,14 +12,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Controller
-@RequestMapping("UserApi")
+@RequestMapping("userapi")
 public class UserApiController extends BaseController{
 
     @RequestMapping("/user/reg")
     @ResponseBody
     public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response,
                                    @RequestParam("name") String name){
-        return new HashMap<String, Object>();
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("a","b");
+        return map;
     }
 
 }
