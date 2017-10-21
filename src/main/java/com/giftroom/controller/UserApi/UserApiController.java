@@ -17,11 +17,13 @@ public class UserApiController extends BaseController{
 
     @RequestMapping("/user/reg.do")
     @ResponseBody
-    public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response,
-                                   @RequestParam("name") String name){
+    public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response
+                                   //@RequestParam("name") String name
+                                   ){
         Map<String, Object> map = new HashMap<String, Object>();
         map.put("a","b");
-        return map;
+        return renderData(response, map);
+        //return map;
     }
 
 }
