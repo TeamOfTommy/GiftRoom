@@ -5,6 +5,8 @@ package com.giftroom.Jsms;
  */
 public interface IJsmsService {
 
-    void sendValidSMSCode(String telnumber);
+    String sendSMSCode(String telnumber);
+
+    Boolean SendValidSMSCode(String msg_id, String validCode);
 
 }

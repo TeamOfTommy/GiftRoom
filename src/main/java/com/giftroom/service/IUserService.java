@@ -16,4 +16,6 @@ public interface IUserService {
 
     public void updateUser(User user);
 
+    public User checkUser(User user);
+
 }
