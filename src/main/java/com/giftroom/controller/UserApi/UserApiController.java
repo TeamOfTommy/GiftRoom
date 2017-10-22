@@ -34,7 +34,7 @@ public class UserApiController extends BaseController {
 
     private final static Logger logger = LoggerFactory.getLogger(UserApiController.class);
 
-    @RequestMapping(value = "/user/reg/{telnumber}.do", method = RequestMethod.POST)
+    @RequestMapping(value = "/user/reg/{telnumber}.do", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response,
                                    @PathVariable("telnumber") String telnumber,
