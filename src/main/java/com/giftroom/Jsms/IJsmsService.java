@@ -7,6 +7,6 @@ public interface IJsmsService {
 
     String sendSMSCode(String telnumber);
 
-    Boolean SendValidSMSCode(String msg_id, String validCode);
+    Boolean sendValidSMSCode(String msg_id, String validCode);
 
 }

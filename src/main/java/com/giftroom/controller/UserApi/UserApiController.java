@@ -38,16 +38,16 @@ public class UserApiController extends BaseController {
     @ResponseBody
     public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response,
                                    @PathVariable("telnumber") String telnumber,
-                                   @RequestParam(value = "nickname", required = false) String nickname,
-                                   @RequestParam(value = "password", required = false) String password,
-                                   @RequestParam(value = "code", required = false) String code,
-                                   @RequestParam(value = "msgId", required = false) String msgId) {
+                                   @RequestParam(value = "nickname") String nickname,
+                                   @RequestParam(value = "password") String password,
+                                   @RequestParam(value = "code") String code,
+                                   @RequestParam(value = "msgId") String msgId) {
         try{
             User isExistUser = userService.selectUser(telnumber);
             if(isExistUser != null) {
                 return renderErrorData(response, Code.IsUserExistError.getCode(), Code.IsUserExistError.getMessage());
             }
-            if(!jsmsService.SendValidSMSCode(msgId, code)){
+            if(!jsmsService.sendValidSMSCode(msgId, code)){
                 return renderErrorData(response, Code.SmsCodeError.getCode(), Code.SmsCodeError.getMessage());
             }
             User user = new User(nickname, password, telnumber);

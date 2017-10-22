@@ -36,7 +36,7 @@ public class JsmsServiceImpl implements IJsmsService {
         return msgId;
     }
 
-    public Boolean SendValidSMSCode(String msg_id, String validCode){
+    public Boolean sendValidSMSCode(String msg_id, String validCode){
         SMSClient client = new SMSClient(JsmsKey.masterSecret,JsmsKey.appKey);
         Boolean valid = Boolean.FALSE;
         try{
