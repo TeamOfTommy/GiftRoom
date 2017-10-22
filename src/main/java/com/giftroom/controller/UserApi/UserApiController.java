@@ -38,10 +38,10 @@ public class UserApiController extends BaseController {
     @ResponseBody
     public Map<String, Object> reg(HttpServletRequest request, HttpServletResponse response,
                                    @PathVariable("telnumber") String telnumber,
-                                   @RequestParam("nickname") String nickname,
-                                   @RequestParam("password") String password,
-                                   @RequestParam("code") String code,
-                                   @RequestParam("msgId") String msgId) {
+                                   @RequestParam(value = "nickname", required = false) String nickname,
+                                   @RequestParam(value = "password", required = false) String password,
+                                   @RequestParam(value = "code", required = false) String code,
+                                   @RequestParam(value = "msgId", required = false) String msgId) {
         try{
             User isExistUser = userService.selectUser(telnumber);
             if(isExistUser != null) {
