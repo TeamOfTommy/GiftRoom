@@ -13,6 +13,10 @@ import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Created by tommy on 2017/10/22.
+ */
+
 public class BaseController {
 
     protected Map<String, Object> renderData(HttpServletResponse response, Object result) {

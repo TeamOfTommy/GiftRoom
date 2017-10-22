@@ -9,6 +9,22 @@
     </context:component-scan>
 
     <!-- 加载配置文件 -->
-    <context:property-placeholder location="classpath:datasource.properties" />
+    <context:property-placeholder location="classpath:datasource.properties,classpath:jdbc.properties" />
+    <!-- 引入配置文件 -->
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <!--<property name="location" value="classpath:datasource.properties,classpath:jdbc.properties" />-->
+    </bean>
+
+    <import resource="spring-mybatis.xml"/>
+
+    <bean id="txBeanNameProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>*Service</value>
+                <value>*Dao</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>

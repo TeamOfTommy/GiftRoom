@@ -208,6 +208,30 @@
             <artifactId>fastjson</artifactId>
             <version>1.2.35</version>
         </dependency>
+        <!--极光短信-->
+        <dependency>
+            <groupId>cn.jpush.api</groupId>
+            <artifactId>jsms-client</artifactId>
+            <version>1.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.jpush.api</groupId>
+            <artifactId>jiguang-common</artifactId>
+            <version>1.0.8</version>
+        </dependency>
 
     </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+        </resources>
+        <finalName>GiftRoom</finalName>
+    </build>
 </project>
