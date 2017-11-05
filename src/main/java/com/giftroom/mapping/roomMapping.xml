@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+<mapper namespace="cn.bj.mybatis.models.UserMapper">
+ -->
+<mapper namespace="com.giftroom.mapping.roomMapping">
+    <!--<select id="getUserOrders" parameterType="int" resultMap="resultUserOrderList">-->
+    <!--select t_user.id,t_user.username,t_user.age,t_order.id o_id,t_order.orderName from t_user,t_order where t_user.id=t_order.userid and t_user.id=#{id}-->
+    <!--</select>-->
+    <!--<resultMap type="Order" id="resultUserOrderList">-->
+    <!--<id property="id" column=" o_id"/>-->
+    <!--<result property="orderName" column="orderName"/>-->
+    <!--<association property="user" javaType="User">-->
+    <!--<id property="id" column="id" />-->
+    <!--<result property="name" column="name" />-->
+    <!--<result property="age" column="age" />-->
+    <!--</association>-->
+    <!--</resultMap>-->
+    <!-- 查询数据 -->
+    <select id="selectRooms"  resultType="com.giftroom.model.Room">
+        select * from rooms where status = 1
+    </select>
+
+    <!-- 查询登陆用户数据 -->
+    <select id="checkUser"  resultType="com.giftroom.model.Room"  parameterType="com.giftroom.model.Room">
+        select * from users where telnumber = #{telnumber} and password = #{password}
+    </select>
+
+    <!-- 增加数据 -->
+    <insert id="addUser" parameterType="com.giftroom.model.Room" useGeneratedKeys="true" keyProperty="id">
+        insert into users(nickname,telnumber,password) values(#{nickname},#{telnumber},#{password})
+    </insert>
+    <!-- 修改数据 -->
+    <update id="updateUser" parameterType="com.giftroom.model.Room">
+        update users set username=#{username} where telnumber = #{telnumber}
+    </update>
+    <!-- 删除数据 -->
+    <delete id="deleteUser" parameterType="String">
+        update users set user_status=0 where telnumber = #{telnumber}
+    </delete>
+</mapper>
