@@ -7,13 +7,15 @@ public class Room {
 
     private Integer id;
 
-    private String roomNum;
+    private String num;
 
-    private String roomName;
+    private String name;
 
-    private String roomPic;
+    private String picture;
 
-    private String roomOnlineNum;
+    private String onlinenum;
+
+    private Integer status;
 
     public Integer getId() {
         return id;
@@ -23,35 +25,43 @@ public class Room {
         this.id = id;
     }
 
-    public String getRoomNum() {
-        return roomNum;
+    public String getNum() {
+        return num;
     }
 
-    public void setRoomNum(String roomNum) {
-        this.roomNum = roomNum;
+    public void setNum(String num) {
+        this.num = num;
     }
 
-    public String getRoomName() {
-        return roomName;
+    public String getName() {
+        return name;
     }
 
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getRoomPic() {
-        return roomPic;
+    public String getPicture() {
+        return picture;
     }
 
-    public void setRoomPic(String roomPic) {
-        this.roomPic = roomPic;
+    public void setPicture(String picture) {
+        this.picture = picture;
     }
 
-    public String getRoomOnlineNum() {
-        return roomOnlineNum;
+    public String getOnlinenum() {
+        return onlinenum;
     }
 
-    public void setRoomOnlineNum(String roomOnlineNum) {
-        this.roomOnlineNum = roomOnlineNum;
+    public void setOnlinenum(String onlinenum) {
+        this.onlinenum = onlinenum;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }

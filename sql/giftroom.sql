@@ -19,7 +19,7 @@ CREATE TABLE `rooms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `num` varchar(45) NOT NULL COMMENT '房间号-唯一',
   `name` varchar(45) NOT NULL COMMENT '房间名',
-  `url` varchar(45) NOT NULL '' COMMENT '房间路径',
+  `url` varchar(45) NOT NULL DEFAULT '' COMMENT '房间路径',
   `picture` varchar(45) NOT NULL DEFAULT '' COMMENT '房间图像路径',
   `onlinenum` INTEGER NOT NULL DEFAULT 0 COMMENT '房间在线人数',
   `status` int(11) NOT NULL DEFAULT 1 COMMENT '房间状态 0-删除 1-正常',
@@ -28,8 +28,8 @@ CREATE TABLE `rooms` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8 COMMENT '房间表';
 
-INSERT INTO rooms (id, name, url, picture, onlinenum, status, c1, c2) VALUE (1, "10001","测试房间1",'','',0,1,null,null)
-INSERT INTO rooms (id, name, url, picture, onlinenum, status, c1, c2) VALUE (2, "10002","测试房间2",'','',0,1,null,null)
-INSERT INTO rooms (id, name, url, picture, onlinenum, status, c1, c2) VALUE (3, "10003","测试房间3",'','',0,1,null,null)
-INSERT INTO rooms (id, name, url, picture, onlinenum, status, c1, c2) VALUE (4, "10004","测试房间4",'','',0,1,null,null)
-INSERT INTO rooms (id, name, url, picture, onlinenum, status, c1, c2) VALUE (5, "10005","测试房间5",'','',0,1,null,null)
+INSERT INTO rooms (id,num,name, url, picture, onlinenum, status, c1, c2) VALUE (1, "10001","测试房间1",'','',0,1,null,null);
+INSERT INTO rooms (id,num,name, url, picture, onlinenum, status, c1, c2) VALUE (2, "10002","测试房间2",'','',0,1,null,null);
+INSERT INTO rooms (id,num,name, url, picture, onlinenum, status, c1, c2) VALUE (3, "10003","测试房间3",'','',0,1,null,null);
+INSERT INTO rooms (id,num,name, url, picture, onlinenum, status, c1, c2) VALUE (4, "10004","测试房间4",'','',0,1,null,null);
+INSERT INTO rooms (id,num,name, url, picture, onlinenum, status, c1, c2) VALUE (5, "10005","测试房间5",'','',0,1,null,null);
